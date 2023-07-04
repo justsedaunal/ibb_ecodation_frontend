@@ -48,13 +48,19 @@
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarSupportedContent">
+                <ul class="navbar-nav  mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="index.html">Anasayfa</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Link</a>
+                    </li>
+                
+                </ul>
+                <ul class="navbar-nav  mb-2 mb-lg-0 order-3">
+                    <li class="nav-item">
+                        <button class="btn btn-primary" onclick="darkModu()"> <i class="fa-solid fa-moon"></i></button>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -70,10 +76,16 @@
                             <li><a class="dropdown-item" href="#">Something else here</a></li>
                         </ul>
                     </li>
-                </ul>
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <button class="btn btn-primary" onclick="darkModu()"> <i class="fa-solid fa-moon"></i></button>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <i class="fa-solid fa-globe"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item"  data-bs-target="#loginId">EN</a></li>
+                            <li><a class="dropdown-item" href="#">TR</a></li>
+                          
+                        </ul>
                     </li>
                 </ul>
                 <form class="d-flex" role="search">
@@ -386,7 +398,32 @@
           <!-- newspaper end -->
 
            <!-- newspaper start -->
-          <section id="contact"></section>
+          <section id="contact" class="d-flex container justify-content-between" >
+            <div class="w-50" >
+                <div style="max-width:100%;list-style:none; transition: none;overflow:hidden;height:500px;"><div id="google-maps-display" style="height:100%; width:100%;max-width:100%;"><iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=Central+Park,+New+York,+Amerika+Birleşik+Devletleri&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe></div><a class="our-googlemap-code" href="https://www.bootstrapskins.com/themes" id="enable-maps-data">premium bootstrap themes</a><style>#google-maps-display img.text-marker{max-width:none!important;background:none!important;}img{max-width:none}</style></div>
+            </div>
+            <div class="w-50 d-flex align-items-center justify-content-center" >
+                <form class="w-100 p-4" >
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Full Name</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Phone Number</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    <div class="">
+                        <label  class="form-label" for="floatingTextarea">Comments</label>
+                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                      
+                      </div>
+                    <div class="mb-3 form-check">
+                     
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </form>
+            </div>
+          </section>
            <!-- newspaper end -->
     </main>
    

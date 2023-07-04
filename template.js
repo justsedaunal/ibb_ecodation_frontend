@@ -23,3 +23,5 @@ let newDate=()=>{
 $("#date_id").html(date);
 }
 newDate()
+
+let hrefs = ["/","#main_id","#messages","#parallax","#newspaper","#blog","#contact","#footer_id"]
