@@ -495,23 +495,23 @@ let sumExamplesData = () => {
             //evenSum = evenSum+i;
             evenSum += i;
             evenCounter++;
-            evenNumber = evenNumber+" "+i;
+            evenNumber = evenNumber + " " + i;
         } else {
             oddSum += i;
             oddCounter++;
-            oddNumber = oddNumber+" "+i;
+            oddNumber = oddNumber + " " + i;
         }
-        commonSum+=i;
+        commonSum += i;
     } // end for
-    console.log("Toplam: "+commonSum);
+    console.log("Toplam: " + commonSum);
 
-    console.log("Tek sayılar: "+oddNumber);
-    console.log("Tek sayı adedi: "+oddCounter);
-    console.log("Tek sayı toplam: "+oddSum);
+    console.log("Tek sayılar: " + oddNumber);
+    console.log("Tek sayı adedi: " + oddCounter);
+    console.log("Tek sayı toplam: " + oddSum);
 
-    console.log("Çift sayılar: "+evenNumber);
-    console.log("Çift sayı adedi: "+evenCounter);
-    console.log("Çift sayı toplam: "+evenSum);
+    console.log("Çift sayılar: " + evenNumber);
+    console.log("Çift sayı adedi: " + evenCounter);
+    console.log("Çift sayı toplam: " + evenSum);
 } // end sumExamplesData
 //sumExamplesData()
 
@@ -538,40 +538,197 @@ let sumExamplesData = () => {
 // H**** MIZ***
 // ipucu: charAt, substring, indexOf, döngü, karar mekanizma
 
-let usernameAndSurnameMasking=()=>{
-    const usernameAndSurname=prompt("Lütfen adınızı ve soyadınızı giriniz");
+let usernameAndSurnameMasking = () => {
+    const usernameAndSurname = prompt("Lütfen adınızı ve soyadınızı giriniz");
 
-    const userIndex=usernameAndSurname.indexOf(" ");
-    let username=usernameAndSurname.substring(0,userIndex);
+    const userIndex = usernameAndSurname.indexOf(" ");
+    let username = usernameAndSurname.substring(0, userIndex);
     for (let i = 1; i < username.length; i++) {
-      username=username.replace(username.charAt(i),"*");
+        username = username.replace(username.charAt(i), "*");
     }
-    username= username.toUpperCase()
+    username = username.toUpperCase()
     console.log(username.toUpperCase());
 
-    let surname=usernameAndSurname.substring(userIndex+1,usernameAndSurname.length).toUpperCase();
-    for (let i = 3; i <=username.length; i++) {
-        surname=surname.replace(surname.charAt(i),"*");
+    let surname = usernameAndSurname.substring(userIndex + 1, usernameAndSurname.length).toUpperCase();
+    for (let i = 3; i <= username.length; i++) {
+        surname = surname.replace(surname.charAt(i), "*");
     }
     console.log(surname);
-    console.log(username.concat(" ").concat(surname)  );
+    console.log(username.concat(" ").concat(surname));
 }
-usernameAndSurnameMasking();
+//usernameAndSurnameMasking();
 
+////////////////////////////////////////////////////////
+// software  prensible
+// KISS, YAGNI, SOLID, CLEAN CODE, SPAGETTI CODE, DUMMY CODE
+////////////////////////////////////////////////////////
+// Monad 
+// const birinci=()=>{
+// let user=Number(prompt("Lütfen Sayı Giriniz"));
+// return user;
+// }
+
+// const ikinci=()=>{
+// let data=birinci();
+// console.log(Math.sqrt(data));
+// }
+//ikinci()
+
+////////////////////////////////////////////////////////
+// setTimeOut(),setInterval();
+
+// // belirli zaman sonra tek bir kere çalışır ve durur
+// setTimeout(function(){
+//     console.log("setTimeout çalıştı");
+// },2000);
+
+// // belirli zaman sonra çalışır ve sonsuza kadar kapanıp tekrar çalışır.
+// setInterval(()=>{
+//     console.log("setInterval çalıştı");
+// },3000);
+
+////////////////////////////////////////////////////////
+// callbackfunction
+const birinci = (data) => {
+    return Math.pow(data, 2);
+}
+
+const ikinci = (callbackFunction) => {
+    let user = Number(prompt("Lütfen Sayı Giriniz"));
+    let data = callbackFunction(user);
+    console.log(data);
+}
+//ikinci(birinci)
+////////////////////////////////////////////////////////
+// promise
+
+const promTutorials = () => {
+    // catch 1 tane olmak zorunda
+    let data = new Promise((resolve, reject) => {
+        let status = 400;
+        if (status === 200)
+            resolve("çalıştı");
+        else
+            reject("çalışmadı")
+    }).then(
+        () => { console.log("olumlu"); }
+    ).catch(
+        (err) => { console.error(err); }
+    );
+}
+//promTutorials()
+
+// asyn/await
 
 ////////////////////////////////////////////////////////
 
-// software  prensible
-// Monad 
-// setTimeOut
-// callbackfunction
-// promise
-// asyn/await
-// dizi forEach, map, filter ,
+////////////////////////////////////////////////////////
+// dizi, Iterative for, for in, for of, forEach, map, filter , fill
+let arr = () => {
+    const numbers = [3, 5, 6, 1, 9, 4, 66];
+    return numbers;
+}
+
+let arrResult = () => {
+    let data = arr();
+    // console.log(data);
+    // console.log(data[0]);
+    // console.log(data[5]);
+    // console.log(data[data.length - 1]);
+
+    // //Iterative For Loop
+    // for(let i=0 ;i<data.length;i++){
+    //     document.write(data[i]+" ");
+    // }
+    // document.write("<br/>");
+    // // for in 
+    // for(let temp in data){
+    //     document.write(temp+" => "+data[temp]+"<br/>");
+    // }
+
+    // document.write("<br/>");
+    // // for of 
+    // for(let temp of data){
+    //     document.write(temp+" ");
+    // }
+    //document.write("<br/>");
+    // ForEach
+    // forEach(callbackfn: (value: T, index: number, array: T[]) => void, thisArg?: any): void;
+    // data.forEach((value, index, array) => {
+    //     document.write(index + " => " + value + "<br/>");
+    //     //document.write(`${index} => ${value} <br/>`);
+    // });
+
+    //document.write("<br/>");
+    // filter
+    // filter<S extends T>(predicate: (value: T, index: number, array: T[]) => value is S, thisArg?: any): S[];
+    // let result1 = data.filter((value, index, array) => {
+    //     return value % 2 == 0
+    // }).forEach((value, index, array) => {
+    //     //document.write(index+" => "+value+"<br/>");
+    //     document.write(`${index} => ${value} <br/>`);
+    // });
+
+    // document.write("<br/>");
+    // map 
+    // map<U>(callbackfn: (value: T, index: number, array: T[]) => U, thisArg?: any): U[];
+    // data.map((value, index, array) => {
+    //     return value += 10;
+    // }).forEach((value, index, array) => {
+    //     //document.write(index+" => "+value+"<br/>");
+    //     document.write(`${index} => ${value} <br/>`);
+    // });
+
+    // dizilere devam.
+    document.writeln("Elaman sayısı: " + data.length)
+    console.log(data);
+    data.push(99);
+    data.unshift(11);
+
+    console.log(data);
+    data.pop() //sonda 1 eleman çıkar
+    data.shift() //baştan 1 eleman çıkar
+    console.log(data);
+
+    //data.sort();
+    //console.log(data);
+
+    // data.reverse();
+    // console.log(data);
+
+    data.sort().reverse();
+    console.log(data);
+    console.log(data.toString().substring(0, 2));
+    // splice ,slice 
+}
+arrResult();
+
+// ÖDEV
+/*
+ Örnek
+1.YOL normal diziyle yapalım
+rastgele 10 elemanlı bir dizi  oluşturalım.
+bu sayılardan tek olanları bulalım.
+bu tek sayıların sonuna 5 ekleyelim
+buradaki sayıları ekranda gösterelim. ?
+bu şarta uyan kaç tane sayı vardır ?
+
+ 2.YOL map,filter, forEach ile yapalım.
+ rastgele 10 elemanlı bir dizi  oluşturalım.  ==> (random)
+ bu sayılardan tek olanları bulalım.          ==> (filter)
+ bu tek sayıların sonuna 5 ekleyelim          ==> (map)
+ buradaki sayıları ekranda gösterelim. ?      ==> (forEach)
+ bu şarta uyan kaç tane sayı vardır ?         ==> (counter)
+ 2.YOL map,filter,counter
+
+*/
+
+////////////////////////////////////////////////////////
+// callback promise örneği
+////////////////////////////////////////////////////////
 // obje
 // dom
 // jquery ajax GET/POST
-
 
 
 
