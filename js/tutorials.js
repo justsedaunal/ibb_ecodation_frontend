@@ -232,6 +232,20 @@ multiple Comment
 // S-9) girdiğiniz kelimenin sonuna "-ben js öğreniyorum" (concat())
 // S-10) girdiğiniz 0 ile 4 arasındaki indexi ekranda gösterin? (subString())
 
+const getUserInfo = () => {
+    let userData = prompt("Bir şeyler yazın.")
+    let trimedData = userData.trim()
+    let lowerCase = userData.toLocaleLowerCase()
+    let upperCase = userData.toUpperCase()
+    let replaced = userData.replace(userData,"javascript")
+    console.log(userData.length)
+    console.log(trimedData.length)
+    console.log(lowerCase)
+    console.log(upperCase)
+    console.log(replaced)
+}
+getUserInfo()
+
 ///////////////////////////////////////////////////
 // Function (Normal)
 // 1 retursuz Parametresiz
@@ -556,7 +570,7 @@ let usernameAndSurnameMasking=()=>{
     console.log(surname);
     console.log(username.concat(" ").concat(surname)  );
 }
-usernameAndSurnameMasking();
+// usernameAndSurnameMasking();
 
 
 ////////////////////////////////////////////////////////
